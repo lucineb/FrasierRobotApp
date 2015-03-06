@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/vital"
+        android:src="@drawable/vital"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/excersise"
+        android:src="@drawable/excersise"
+        android:layout_toRightOf="@+id/vital"
+        android:layout_toEndOf="@+id/vital" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendar"
+        android:layout_below="@+id/vital"
+        android:layout_toLeftOf="@+id/excersise"
+        android:layout_toStartOf="@+id/excersise"
+        android:src="@drawable/calendar" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/walk"
+        android:src="@drawable/walk"
+        android:layout_below="@+id/excersise"
+        android:layout_alignLeft="@+id/excersise"
+        android:layout_alignStart="@+id/excersise" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emergency"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/emergency"
+        android:layout_below="@+id/calendar" />
+
+</RelativeLayout>
