@@ -45,7 +45,18 @@ public class MainActivity extends ActionBarActivity {
                 Toast.makeText(MainActivity.this, "you clicked calendar", Toast.LENGTH_LONG)
                         .show();
                 ImageButton calendar = (ImageButton) v;
-                startActivity(new Intent(getApplicationContext(), Calendar.class));
+                //startActivity(new Intent(getApplicationContext(), Calendar.class));
+                        //taken from: http://stackoverflow.com/questions/3721963/how-to-add-calendar-events-in-android
+                        Calendar cal = Calendar.getInstance();
+                        Intent intent = new Intent(Intent.ACTION_EDIT);
+                        intent.setType("vnd.android.cursor.item/event");
+                        intent.putExtra("beginTime", cal.getTimeInMillis());
+                        intent.putExtra("allDay", true);
+                        intent.putExtra("rrule", "FREQ=YEARLY");
+                        intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
+                        intent.putExtra("title", "A Test Event from android app");
+                        startActivity(intent);
+
             }
         });
     }
